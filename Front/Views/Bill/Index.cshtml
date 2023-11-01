@@ -1,0 +1,78 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>Creación de facturas</h1>
+<div>
+    <span class="mr-1">Nueva factura:</span>
+    <button class="btn btn-primary col-md-2 col-6" id="btnNewBill">Nueva</button>
+</div>
+<div class="p-2 mt-1 divBody" style="background-color: #E8DAEF; border-radius: 10px;">
+    <div class="row">
+        <div class="mb-2 col-sm-4 col-md-2 col-6">
+            <label for="sltClient" class="form-label">Cliente</label>
+            <select class="form-select" aria-label="Default select example" id="sltClient">
+                <option value ="0" selected>Cliente</option>
+            </select>
+        </div>
+        <div class="mb-2 col-sm-4 col-md-2 col-6">
+            <label for="txtNumberBill" class="form-label">Numero factura</label>
+            <input type="number" class="form-control" id="txtNumberBill" placeholder="Numero factura">
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary col-md-2 col-6" id="btnAddProduct">Agregar producto</button>
+        </div>
+        <div class="col-12 mt-1 mb-2">
+            <div class="table-responsive">
+                <table class="table w-100">
+                    <thead>
+                        <tr>
+                            <th scope="col">Producto</th>
+                            <th scope="col">Precio unitario</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">Imagen</th>
+                            <th scope="col">Totales</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyProducts"></tbody>
+                </table>
+            </div>
+            <div class="row justify-content-end">
+                <div class="col-md-4 col-12">
+                    <ul class="list-group list-group-horizontal w-100">
+                        <li class="list-group-item col-md-6 col-8">Sub total</li>
+                        <li class="list-group-item peso col-md-6 col-4" id="liSubTotal">0</li>
+                    </ul>
+                    <ul class="list-group list-group-horizontal w-100">
+                        <li class="list-group-item col-md-6 col-8">Impuesto (19%)</li>
+                        <li class="list-group-item peso col-md-6 col-4" id="liTax">0</li>
+                    </ul>
+                    <ul class="list-group list-group-horizontal w-100">
+                        <li class="list-group-item col-md-6 col-8">Total</li>
+                        <li class="list-group-item peso col-md-6 col-4" id="liTotal">0</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+</div>
+<div class="mt-1">
+    <button class="btn btn-primary col-md-2 col-6" id="btnSaveBill">Guardar</button>
+</div>
+
+<div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      
+      <div class="modal-body text-center d-block">
+        <i class="fa-solid fa-circle-exclamation" style="font-size: 100px; color:#C6BE05"></i>
+        <p id="textDanger"></p>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<script src="~/js/Bill/Bill.js"></script>

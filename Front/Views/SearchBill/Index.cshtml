@@ -1,0 +1,63 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>Busqueda de facturas</h1>
+<div>
+    <span class="mr-1">Tipo de busqueda</span>
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="chkClient" checked>
+        <label class="form-check-label" for="chkClient">Cliente</label>
+    </div>
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="chkBillNumber">
+        <label class="form-check-label" for="chkBillNumber">Numero factura</label>
+    </div>
+</div>
+<div class="p-2 mt-1 divBody" style="background-color: #E8DAEF; border-radius: 10px;">
+    <div class="row">
+        <div class="mb-2 col-sm-4 col-md-2 col-6">
+            <label for="sltClientSearch" class="form-label">Cliente</label>
+            <select class="form-select" aria-label="Default select example" id="sltClientSearch">
+                <option value="0" selected>Cliente</option>
+            </select>
+        </div>
+        <div class="mb-2 col-sm-8 col-md-4 col-12">
+            <label for="txtNumberBillSearch" class="form-label">Numero factura</label>
+            <div style="justify-content: center;align-items: center; display: flex;">
+                <input type="number" class="form-control" id="txtNumberBillSearch" placeholder="Numero factura" disabled>
+                <div class="w-100" style="margin-left: 5px;">
+                    <button class="btn btn-primary" id="btnSearchBill">Buscar</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 mt-1 mb-2">
+            <div class="table-responsive">
+                <table class="table w-100">
+                    <thead>
+                        <tr class="text-center">
+                            <th scope="col">Numero de factura</th>
+                            <th scope="col">Fecha de emisión</th>
+                            <th scope="col">Total facturado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyBills"></tbody>
+                </table>
+            </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalSearch" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      
+      <div class="modal-body text-center d-block">
+        <i class="fa-solid fa-circle-exclamation" style="font-size: 100px; color:#C6BE05"></i>
+        <p>No hay información, verifique filtro.</p>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<script src="~/js/SearchBill/SearchBill.js"></script>
