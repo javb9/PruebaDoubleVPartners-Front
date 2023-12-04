@@ -5,25 +5,26 @@
 <h1>Creación de facturas</h1>
 <div>
     <span class="mr-1">Nueva factura:</span>
-    <button class="btn btn-primary col-md-2 col-6" id="btnNewBill">Nueva</button>
+    <div id="btnNewBill"></div>
 </div>
 <div class="p-2 mt-1 divBody" style="background-color: #E8DAEF; border-radius: 10px;">
     <div class="row">
         <div class="mb-2 col-sm-4 col-md-2 col-6">
             <label for="sltClient" class="form-label">Cliente</label>
-            <select class="form-select" aria-label="Default select example" id="sltClient">
-                <option value ="0" selected>Cliente</option>
-            </select>
+            <div class="dx-field">
+                <div id="sltClient"></div>
+            </div>
         </div>
         <div class="mb-2 col-sm-4 col-md-2 col-6">
             <label for="txtNumberBill" class="form-label">Numero factura</label>
-            <input type="number" class="form-control" id="txtNumberBill" placeholder="Numero factura">
+            <div id="txtNumberBill"></div>
         </div>
         <div class="col-12">
-            <button class="btn btn-primary col-md-2 col-6" id="btnAddProduct">Agregar producto</button>
+            <div id="btnAddProduct"></div>
         </div>
         <div class="col-12 mt-1 mb-2">
-            <div class="table-responsive">
+            <div id="TableProducts"></div>
+            @* <div class="table-responsive">
                 <table class="table w-100">
                     <thead>
                         <tr>
@@ -36,8 +37,8 @@
                     </thead>
                     <tbody id="tbodyProducts"></tbody>
                 </table>
-            </div>
-            <div class="row justify-content-end">
+            </div> *@
+            <div class="row justify-content-end mt-2">
                 <div class="col-md-4 col-12">
                     <ul class="list-group list-group-horizontal w-100">
                         <li class="list-group-item col-md-6 col-8">Sub total</li>
@@ -59,7 +60,7 @@
     
 </div>
 <div class="mt-1">
-    <button class="btn btn-primary col-md-2 col-6" id="btnSaveBill">Guardar</button>
+    <div id="btnSaveBill"></div>
 </div>
 
 <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
